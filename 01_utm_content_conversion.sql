@@ -7,11 +7,11 @@
    ============================================================ */
 
 USE mavenfuzzyfactory;
--- 1) Schema check
+-- 1) Schema check 
 SELECT * FROM website_sessions;
 SELECT * FROM orders;
 
--- 2) Baseline: sessions by channel
+-- 2) Baseline: sessions by channel 
 SELECT 
 	utm_content,
     COUNT(DISTINCT website_session_id) as sessions
@@ -35,5 +35,7 @@ FROM website_sessions
 WHERE website_sessions.website_session_id BETWEEN 1000 AND 2000
 GROUP BY website_sessions.utm_content
 ORDER BY sessions DESC;
+
+
 
 
